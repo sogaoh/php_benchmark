@@ -23,8 +23,7 @@ endusec = endtime.usec
 endmsec = (endusec / 1000.0).round
 puts "end : #{endmin}:#{endsec}.#{endmsec}"
 
-margin = (endmin * 60 + endsec) - (startmin * 60 + startsec)
+margin = endtime - starttime
 marginmin = (margin / 60).truncate
-marginsec = (margin - (marginmin * 60)).truncate
-marginmsec = (endmsec - startmsec).abs
-puts "margin : #{marginmin}:#{marginsec}.#{marginmsec}"
+marginsec = (margin - (marginmin * 60))
+puts "margin : #{marginmin}:#{marginsec}"
